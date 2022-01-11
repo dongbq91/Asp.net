@@ -1,0 +1,105 @@
+﻿@model Bai6.Models.Student
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="witrh=device-witrh" />
+    <title>Regis</title>
+</head>
+<body>
+    <div>
+        <h4>Student information</h4>
+        <hr />
+        <table border="1">
+
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.name)
+                </th>
+                <th>
+                    @Html.DisplayFor(model => model.name)
+                </th>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.gender)</th>
+                <th>
+                    @Html.DisplayFor(model => model.gender)
+                </th>
+            </tr>
+
+
+
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.email)</th>
+                <th>
+                    @Html.DisplayFor(model => model.email)
+                </th>
+            </tr>
+
+
+
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.addr)</th>
+                <th>
+                    @Html.DisplayFor(model => model.addr)
+                </th>
+            </tr>
+
+
+
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.subject)</th>
+                <th>
+                    @Html.DisplayFor(model => model.subject)
+                </th>
+            </tr>
+
+
+
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.username)</th>
+                <th>
+                    @Html.DisplayFor(model => model.username)
+                </th>
+            </tr>
+
+
+
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.password)</th>
+                <th>
+                    @Html.DisplayFor(model => model.password)
+                </th>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.diem)</th>
+                <th>
+                    @Html.DisplayFor(model => model.diem)
+                </th>
+            </tr>
+
+
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.comment)</th>
+
+                <th>
+                    @Html.DisplayFor(model => model.comment)
+                </th>
+            </tr>
+
+
+
+
+        </table>
+    </div>
+    <p>
+       
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

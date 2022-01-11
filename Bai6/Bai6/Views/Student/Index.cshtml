@@ -1,0 +1,88 @@
+﻿
+@{
+    Layout = null;
+
+
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Student</title>
+</head>
+<body>
+    <div> 
+        <h2> Student Registon form </h2>
+        @using (Html.BeginForm("Regis2", "Student")) { 
+    <table border="1" style="border-collapse: collapse" cellpadding="5">
+        <tr>
+            <td>@Html.Label("Student Name")</td>
+            <td> @Html.TextBox("Name")</td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Gender")</td>
+            <td>
+                @Html.RadioButton("gender", "Male")Male
+                @Html.RadioButton("gender", "Female")Female
+            </td>
+
+        </tr>
+        <tr>
+            <td>@Html.Label("Email")</td>
+            <td> @Html.TextBox("email")</td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Address")</td>
+            <td>
+                @{
+                    IEnumerable<string> strad = new List<string>
+                                        {
+                                "Hanoi", "Danang","TpHochiminh"
+                            };
+                }
+                @Html.DropDownList("addr", new SelectList(strad, strad.FirstOrDefault()), "--Select--"
+               )
+            </td>
+        </tr>
+        <tr>
+            <td> @Html.Label("Subjects")</td>
+            <td>
+                @Html.CheckBox("Toan")Toan
+                @Html.CheckBox("Ly")Ly
+                @Html.CheckBox("Hoa")Hoa
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Username")</td>
+            <td>@Html.TextBox("username")</td>
+        </tr>
+
+
+        <tr>
+            <td>@Html.Label("Password")</td>
+            <td>@Html.TextBox("password")</td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Commnet")</td>
+            <td>@Html.TextArea("commnet", "")</td>
+        </tr>
+        <tr>
+            <td>@Html.Label("So A")</td>
+            <td>@Html.TextBox("a")</td>
+        </tr>
+        <tr>
+            <td>@Html.Label("So b")</td>
+            <td>@Html.TextBox("b")</td>
+        </tr>
+       
+        <tr>
+            <td> <input type="submit" value="Regis" /></td>
+            <td> <input type="reset" value="Cancel" /></td>
+        </tr>
+    </table>
+        }
+    </div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+﻿@model Bai6.Models.bai2
+
+@{
+    ViewBag.Title = "Regis";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Regis</title>
+</head>
+<body>
+    <div>
+        <h4> Information</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.firstname)</th>
+                        <th>@Html.DisplayNameFor(model => model.lastname)</th>
+                        <th>@Html.DisplayNameFor(model => model.email)</th>
+                        <th>@Html.DisplayNameFor(model => model.password)</th>
+                        <th>@Html.DisplayNameFor(model => model.addr)</th>
+                        <th>@Html.DisplayNameFor(model => model.gender)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>@Html.DisplayFor(model => model.firstname)</th>
+                        <th>@Html.DisplayFor(model => model.lastname)</th>
+                        <th>@Html.DisplayFor(model => model.email)</th>
+                        <th>@Html.DisplayFor(model => model.password)</th>
+                        <th>@Html.DisplayFor(model => model.addr)</th>
+                        <th>@Html.DisplayFor(model => model.gender)</th>
+                    </tr>
+                </tbody>
+            </table>
+        </dl>
+    </div>
+    <p>
+
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+

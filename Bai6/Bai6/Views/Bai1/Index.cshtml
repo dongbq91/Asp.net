@@ -1,0 +1,74 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Tinh toán</h2>
+@{
+    var result = 0;
+    var totalMessage = "";
+    var number1 = "";
+    var number2 = "";
+    if (IsPost)
+    {
+        var calculation = Request["calc"];
+        number1 = Request["text1"];
+        number2 = Request["text2"];
+        switch (calculation)
+        {
+            case "Cộng":
+                result = number1.AsInt() + number2.AsInt();
+                break;
+            case "Trừ":
+                result = number1.AsInt() - number2.AsInt();
+                break;
+            case "Nhân":
+                result = number1.AsInt() * number2.AsInt();
+                break;
+            case "Chia":
+                result = number1.AsInt() / number2.AsInt();
+                break;
+        }
+        totalMessage = result.ToString();
+    }
+}
+<form action="" method="post">
+    <table>
+        <tr>
+            <td style="padding: 2px">
+                <label>Nhập sô thứ 1 </label>
+            </td>
+            <td style="padding: 2px">
+                <input type="text" name="text1" value="@number1" />
+            </td>
+        </tr>
+        <tr>
+            <td style="padding: 2px">
+                <label>Nhập sô thứ 2 </label>
+            </td>
+            <td style="padding: 2px">
+                <input type="text" name="text2" value="@number2" />
+            </td>
+        </tr>
+        <tr>
+            <td style="padding: 2px">
+                <label>Kết quả: </label>
+            </td>
+            <td style="padding: 2px">
+                <p>
+                    <input type="text" name="text3" value="@totalMessage" />
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="padding: 2px">
+                <input type="submit" value="Cộng" name="calc" />
+                <input type="submit" value="Trừ" name="calc" />
+                <input type="submit" value="Nhân" name="calc" />
+                <input type="submit" value="Chia" name="calc" />
+            </td>
+        </tr>
+    </table>
+
+</form>
+

@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/wwwroot/CSS/admin.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div id="header">
+        <div class="h-left">
+            <img src="~/wwwroot/images/logo.jpg" alt="logo">
+        </div>
+        <div class="h-right">
+            <b>TRANG QUẢN TRỊ</b>
+        </div>
+    </div>
+    <div id="content">
+        <div id="menu">
+            <ul>
+                <li><a href="/Admin/Index">Quản lý sản phẩm</a></li>
+                <li><a href="/Admin/About">Quản lý đơn hàng</a></li>
+                <li><a href="/Admin/Contact">Quản lý khách hàng</a></li>
+                <li><a href="/Admin/News">Quản lý tin tức</a></li>
+                <li><a href="/Admin/Product">Quản lý tài khoản</a></li>
+                <li><a href="/Admin/Logout">Đăng xuất</a></li>
+            </ul>
+        </div>
+        <div id="noidung">
+            @RenderBody()
+        </div>
+    </div>
+</body>
+</html>

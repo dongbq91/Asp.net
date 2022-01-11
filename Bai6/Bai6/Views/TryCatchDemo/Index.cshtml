@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Try catch demo</h2>
+@{ 
+    var dataFilePath = "~/datafile.txt";
+    var fileContent = "";
+    var phyicalPath = Server.MapPath(dataFilePath);
+    var userMessage = " Xin vao , Thoi gian la :" + DateTime.Now;
+    var userErrMsg = "";
+    var errMsg = "";
+
+    if (IsPost)
+    {
+        try
+        {
+            fileContent = File.ReadAllText(@"F:\Asp\Bai6\Bai6\datafile.txt");
+
+            fileContent = File.ReadAllText(phyicalPath);
+        }
+        catch(FileNotFoundException f)
+        {
+            errMsg = f.Message;
+            userErrMsg = "Khong mo duoc file";
+        }
+        catch (DirectoryNotFoundException d)
+        {
+            errMsg = d.Message;
+            userErrMsg = "Khong doc duoc file";
+        }
+    }
+    else
+    {
+        File.WriteAllText(phyicalPath, userMessage);
+    }
+}
+
+<form method="post" action="">
+   <input type="submit" name="sb" value="open file" />
+
+</form>
+<p>@phyicalPath</p>
+<p></p>
+<h3>@fileContent</h3>
+<p></p>
+<p>@userErrMsg</p>
+
