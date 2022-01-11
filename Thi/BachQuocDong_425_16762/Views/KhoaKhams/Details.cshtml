@@ -1,0 +1,26 @@
+﻿@model BachQuocDong_425_16762.Models.KhoaKham
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>KhoaKham</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Tenkhoa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tenkhoa)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Makhoa }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

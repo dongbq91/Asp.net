@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Tạo mới khoa</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <p>
+            Mã khoa:
+            @Html.TextBox("Makhoa")<font color="red"> @ViewData["LoiID"]</font>
+        </p>
+        <p>
+            Tên Khoa:
+            @Html.TextBox("Tenkhoa")<font color="red"> @ViewData["Loiten"]</font>
+        </p>
+       
+        <p> <input type="submit" value="Create" /></p>
+    </fieldset>
+}
+
+<div>@Html.ActionLink("Tro ve", "Index")</div>

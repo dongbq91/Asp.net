@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Chi tiết</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+
+        <p>
+            Mã khoa : @Model.Makhoa
+        </p>
+        <p>
+            Tên Khoa : @Model.Tenkhoa
+
+        </p>
+        <p>
+      
+            @Html.ActionLink("Xóa", "Delete", new { id = @Model.Makhoa }) |
+            @Html.ActionLink("Tro ve", "Index")
+        </p>
+    </fieldset>
+
+}
