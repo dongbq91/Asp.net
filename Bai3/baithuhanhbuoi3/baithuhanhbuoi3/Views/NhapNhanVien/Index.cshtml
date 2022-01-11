@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+<table border="1" style="width:400px;height:300px;">
+    <tr>
+        <td style="padding-left:20px;">Mã nhân viên:</td>
+        <td style="padding-left:20px;">
+            <input type="text" name="Manv" />
+        </td>
+    </tr>
+    <tr>
+        <td style="padding-left:20px;">Họ tên:</td>
+        <td style="padding-left:20px;">
+            <input type="text" name="hoten" />
+        </td>
+    </tr>
+    <tr>
+        <td style="padding-left:20px;">Ngày sinh:</td>
+        <td style="padding-left:20px;">
+            <input type="text" name="ngaysinh" />
+        </td>
+    </tr>
+    <tr>
+        <td style="padding-left:20px;">Giới tính:</td>
+        <td style="padding-left:20px;">
+            <input id="radio1" type="radio" name="nam" checked/>Nam
+            <input id="radio2" type="radio" name="nam" />Nữ
+        </td>
+    </tr>
+    <tr>
+        <td style="padding-left:20px;">Chức vụ: </td>
+        <td style="padding-left:20px;">
+            <select name="chucvu">
+                <option value="giamdoc">Giám đốc</option>
+                <option value="phogiamdoc">Phó giám đốc</option>
+                <option value="Truongphong">Trưởng phòng</option>
+                <option value="phophong">Phó phòng</option>
+                <option value="nhanvien">Nhân viên</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td style="padding-left:20px;">Ngoại ngữ:</td>
+        <td style="padding-left:20px;">
+            <input type="checkbox" name="anh" checked />Anh
+            <input type="checkbox" name="phap" /> Pháp
+            <input type="checkbox" name="nga" /> Nga
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <span style="padding-left:100px"> <button type="button">Lưu</button> </span>
+            <span style="padding-left:130px"> <button type="button">Xóa</button> </span>
+        </td>
+    </tr>
+  
+     
+
+</table>
+
