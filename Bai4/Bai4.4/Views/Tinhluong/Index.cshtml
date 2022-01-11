@@ -1,0 +1,58 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <form action="/Tinhluong/Luongve" method="post">
+            <table border="1">
+                <tr>
+                    <td>Mã NV:  </td>
+                    <td  > <input id="Text1" type="text" name="maNV" /></td>
+                </tr>
+                <tr>
+                    <td>Bậc lương:  </td>
+                    <td> <input id="Text1" type="text" name="bacLuong" /></td>
+                </tr>
+                <tr>
+                    <td>Ngày công:  </td>
+                    <td> <input id="Text1" type="text" name="ngayCong" /></td>
+                </tr>
+                <tr>
+                    <td>Chức vụ: </td>
+                    <td>
+                        <select id="Select1" name="chucVu">
+                            <option value="TP">Trưởng phòng</option>
+                            <option value="PP">Phó phòng</option>
+                            <option value="NV">Nhân viên</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Giới tính: </td>
+                    <td><input id="Radio1" type="radio" name="gioiTinh" value="nam" /> Nam <input id="Radio2" type="radio" name="gioiTinh" value="nu" /> Nữ</td>
+                </tr>
+                <tr>
+                    <td>Ngoại ngữ: </td>
+                    <td><input id="Checkbox1" type="checkbox" name="ngoaiNgu" value="anh" /> Anh <input id="Checkbox2" type="checkbox" name="ngoaiNgu" value="phap" /> Pháp <input id="Checkbox3" type="checkbox" name="ngoaiNgu" value="nga" /> Nga </td>
+                </tr>
+                <tr>
+                    <td>Tiền Lĩnh: </td>
+                    <td>@ViewBag.tienLinh</td>
+                </tr>
+                <tr>
+                    <td style="text-align:center" colspan="2"><input id="Button1" type="submit" value="Tính" /></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

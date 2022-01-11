@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<form action="/Tinh/Index" method="post">
+    <div>Nhập a: <input name="soA" /></div><br />
+    <div>Nhập b: <input name="soB" /></div><br />
+    <div>
+        <input id="Radio1" value="cong" type="radio" name="Tinh"/> Cộng 
+        <input id="Radio2" value="tru"  type="radio" name="Tinh"/> Trừ 
+        <input id="Radio3" value="nhan" type="radio" name="Tinh"/> Nhân 
+        <input id="Radio4" value="chia" type="radio" name="Tinh"/> Chia
+    </div>
+    <input id="Button1" type="submit" value="Caculate" />
+    <label>@ViewBag.diem</label>
+</form>

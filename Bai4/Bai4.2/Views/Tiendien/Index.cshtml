@@ -1,0 +1,52 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <form action="/Tiendien/Tinhtiendien" method="post">
+            <table>
+                <tr>
+                    <td> TÍnh tiền điện</td>
+                </tr>
+                <tr>
+                    <td> Họ tên :</td>
+                    <td> <input name="ten" /> </td>
+                    <td> @Html.CheckBox("ho", true) Hộ ưu tiên</td>
+
+                </tr>
+                <tr>
+                    <td> Loại điện tiêu thụ : </td>
+                    <td>
+                        <select id="loaidien" name="loaidien">
+                            <option value="sh">Sinh hoạt</option>
+                            <option value="kd"> Kinh doanh</option>
+                            <option value="sx"> Sản xuất</option>
+                            <option value="ut">Hộ ưu tiên</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td> Vào chỉ số cũ : </td>
+                    <td> <input type="text" name="cu" /> Kw</td>
+                </tr>
+                <tr>
+                    <td> Vào chỉ số mới : </td>
+                    <td> <input type="text" name="moi" /> Kw</td>
+                </tr>
+                <tr>
+                    <td> <input id="buttinh" type="submit" value="Tính tiền" /></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

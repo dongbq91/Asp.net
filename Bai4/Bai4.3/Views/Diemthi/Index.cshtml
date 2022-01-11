@@ -1,0 +1,54 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        <form action="/Diemthi/Tinhd" method="post">
+            <table>
+                <tr>
+                    <td> Nhập điểm thi</td>
+                </tr>
+                <tr>
+                    <td> Họ tên :</td>
+                    <td> <input name="ten" /> </td>
+                    <td>  @Html.CheckBox("giadinh", true) Gia đình chính sách</td>
+                </tr>
+                <tr>
+                    <td> Loại khu vực : </td>
+                    <td>
+                        <select id="khuvuc" name="khuvuc">
+                            <option value="a">Khu vực A</option>
+                            <option value="b"> Khu vực B</option>
+                            <option value="c"> Khu vực C</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td> Vào điểm toán : </td>
+                    <td> <input type="text" name="toan" /></td>
+                </tr>
+                <tr>
+                    <td> Vào điểm lý : </td>
+                    <td> <input type="text" name="ly" /></td>
+                </tr>
+                <tr>
+                    <td>  Vào điểm hóa : </td>
+                    <td> <input type="text" name="hoa" /></td>
+                </tr>
+                <tr>
+                    <td> <input id="buttinh" type="submit" value="Tính điểm " /></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>
