@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<div>
+    <h2> Student Registon form </h2>
+    @using (Html.BeginForm("open", "Person"))
+    {
+        <table border="1" style="border-collapse: collapse" cellpadding="5">
+            <tr>
+                <td>@Html.Label("Person Name")</td>
+                <td> @Html.TextBox("gioitinh")</td>
+            </tr>
+            <tr>
+                <td>@Html.Label("gioitinh")</td>
+                <td>
+                    @Html.RadioButton("gioitinh", "Male")Male
+                    @Html.RadioButton("gioitinh", "Female")Female
+                </td>
+
+            </tr>
+            
+            <tr>
+                <td>@Html.Label("diachi")</td>
+                <td>
+                    @{
+                        IEnumerable<string> strad = new List<string>
+                                        {
+                                "Hanoi", "Danang","TpHochiminh"
+                            };
+                    }
+                    @Html.DropDownList("diachi", new SelectList(strad, strad.FirstOrDefault()), "--Select--"
+                   )
+                </td>
+            </tr>
+           
+            
+            <tr>
+                <td> <input type="button" value="Open" onclick="location.href = '@Url.Action("Open","Person")'"/></td>
+                <td> <input type="submit" value="Save" /></td>
+                <td> <input type="reset" value="Cancel" /></td>
+            </tr>
+        </table>
+    }
+</div>
