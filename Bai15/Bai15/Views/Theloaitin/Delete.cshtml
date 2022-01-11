@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<fieldset>
+    <legend>Fieldss</legend>
+    <div class="display-label">ID loai tin : @Model.IDLoai</div>
+    <div class="display-label">Ten loai tin : @Model.Tentheloai</div>
+</fieldset>
+
+@using (Html.BeginForm()) 
+{ <p>
+    <input type="submit" value="Delete"/>
+    @Html.ActionLink("Tro ve","Index")
+</p>
+}
+<div class="alert alert-primary" role="alert">
+    @ViewData["Loi xoa"]
+</div>

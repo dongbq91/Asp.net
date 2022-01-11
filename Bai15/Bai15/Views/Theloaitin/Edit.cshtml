@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Fields</legend>
+        <div class="edutor-field">
+            Ten the loai:
+            @Html.TextBox("Tentheloai")
+            @ViewData["Loi"]
+        </div>
+           
+       
+        <p> <input type="submit" value="Save" /></p>
+    </fieldset>
+}
+<div> @Html.ActionLink("Tro ve", "Index")</div>

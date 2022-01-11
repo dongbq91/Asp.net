@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <p>
+            Ten the loai:
+            @Html.DropDownList("IDLoai", new SelectList(ViewBag.IDLoais, "IDLoai", "Tentheloai"))
+        </p>
+        <p>
+            Tieu de tin:
+            @Html.TextBox("Tieudetin")<font color="red"> @ViewData["Loi"]</font>
+        </p>
+        <p>
+            Noi dung tin:
+            @Html.TextBox("Noidungtin")<font color="red"> @ViewData["Loi"]</font>
+        </p>
+        <p> <input type="submit" value="Save" /></p>
+    </fieldset>
+}
+<div> @Html.ActionLink("Tro ve", "Index")</div>

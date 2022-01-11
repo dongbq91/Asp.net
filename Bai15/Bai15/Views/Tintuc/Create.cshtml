@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+<fieldset>
+    <p>
+        Ten the loai:
+        @Html.DropDownList("IDLoai", new SelectList(ViewBag.IDLoais, "IDLoai", "Tentheloai"))
+    </p>
+    <p>
+        Tieu de tin:
+        @Html.TextBox("Tieudetin")<font color="red"> @ViewData["Loi"]</font>
+    </p>
+    <p>
+        Noi dung tin:
+        @Html.TextBox("Noidungtin")<font color="red"> @ViewData["Loi"]</font>
+    </p>
+    <p> <input type="submit" value="Create" /></p>
+</fieldset>
+}
+<div> @Html.ActionLink("Tro ve", "Index")</div>

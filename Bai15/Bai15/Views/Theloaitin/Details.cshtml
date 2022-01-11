@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Fields</legend>
+    <div class="display-label">ID loai tin : @Model.IDLoai</div>
+    <div class="display-label">Ten loai tin : @Model.Tentheloai</div>
+</fieldset>
+@using (Html.BeginForm())
+            {
+<p>
+    @Html.ActionLink("Sua", "Edit", new { id = Model.IDLoai }) |
+    @Html.ActionLink("Chi tiet", "Details", new { id = Model.IDLoai }) |
+    @Html.ActionLink("Tro ve","Index")
+</p>
+            }

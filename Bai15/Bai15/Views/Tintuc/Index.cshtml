@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Bai15.Models.Tintuc>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@Html.ActionLink("Them", "Create", "Tintuc")
+<table border="1px">
+    <tr>
+        <th>Ten the loai</th>
+        <th>Tieu de tin</th>
+        <th>Noi dung tin</th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>@Html.DisplayFor(modelItem => item.Theloaitin.Tentheloai)</td>
+            <td>@item.Tieudetin</td>
+            <td>@item.Noidungtin</td>
+            <td>
+                @Html.ActionLink("Sua", "Edit", new { id = item.IdTin }) |
+                @Html.ActionLink("Chi tiet", "Details", new { id = item.IdTin }) |
+                @Html.ActionLink("Xoa", "Delete", new { id = item.IdTin })
+            </td>
+        </tr>
+    }
+</table>

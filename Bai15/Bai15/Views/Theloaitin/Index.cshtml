@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Tin tuc</h2>
+
+
+
+@Html.ActionLink("Them", "Create","Theloaitin" ) 
+<table border="1px">
+    <tr>
+        <th>ID</th>
+        <th>Ten the loai</th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.IDLoai</td>
+            <td>@item.Tentheloai </td>
+            <td>
+                @Html.ActionLink("Sua", "Edit", new { id = item.IDLoai }) |
+                @Html.ActionLink("Chi tiet", "Details", new { id = item.IDLoai }) |
+                @Html.ActionLink("Xoa", "Delete", new { id = item.IDLoai })
+            </td>
+        </tr>
+    }
+</table>
+
