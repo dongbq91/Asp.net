@@ -1,0 +1,75 @@
+﻿
+@{
+    ViewBag.Title = "Cau1";
+}
+
+<h2>Cau1</h2>
+@{ 
+    var dg = "";
+    var sl = "";
+    double tinht = 0;
+    var th = "";
+    if (IsPost)
+    {
+        var tinh = Request["tinh"];
+        dg = Request["dg"];
+        sl= Request["sl"];
+        if(sl.AsFloat() >= 200)
+        {
+            tinht = (dg.AsFloat() * sl.AsFloat()*0.9);
+        }
+        else {
+            tinht = (dg.AsFloat() * sl.AsFloat());
+        }
+        th = tinht.ToString();
+    }
+}
+<div>
+    <form action="/Home/Cau1" method="post">
+        <table>
+            <tr>
+                <td> </td>
+            </tr>
+            <tr>
+                <td> Mã sản phẩm :</td>
+                <td>
+                    <input name="ma" />
+                </td>
+
+            </tr>
+            <tr>
+                <td> Tên sản phẩm :</td>
+                <td>
+                    <input name="ten" />
+                </td>
+
+            </tr>
+            <tr>
+                <td> Loại sản phẩm : </td>
+                <td>
+                    <select id="loaisp" name="loaisp">
+                        <option value="ns">Nông sản </option>
+                        <option value="hs"> Hải sản</option>
+                        <option value="du"> Đồ uống</option>
+
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td> Số lượng : </td>
+                <td> <input type="text" name="sl" /></td>
+            </tr>
+            <tr>
+                <td> Đơn giá : </td>
+                <td> <input type="text" name="dg" /></td>
+            </tr>
+            <tr>
+                <td> Thành tiền </td>
+                <td> <input type="text" name="th" value="@th"/></td>
+            </tr>
+            <tr>
+                <td> <input id="tinh" type="submit" value="Tính" /></td>
+            </tr>
+        </table>
+    </form>
+</div>

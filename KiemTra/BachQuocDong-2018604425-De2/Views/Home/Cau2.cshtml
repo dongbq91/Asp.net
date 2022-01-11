@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewBag.Title = "Cau2";
+}
+
+<h2>Cau2</h2>
+
+<div>
+    <h2> Sản phẩm </h2>
+    @using (Html.BeginForm("tinhCau2", "Home"))
+    {
+<table border="1" style="border-collapse: collapse" cellpadding="5">
+    <tr>
+        <td>@Html.Label("Mã sản phẩm")</td>
+        <td> @Html.TextBox("masp")</td>
+    </tr>
+    <tr>
+        <td>@Html.Label("Tên sản phẩm")</td>
+        <td> @Html.TextBox("tensp")</td>
+    </tr>
+
+    <tr>
+        <td>@Html.Label("Loại sản phẩm")</td>
+        <td>
+            @{
+                IEnumerable<string> strad = new List<string>
+                                                                    {
+                                "Nông sản ", "Hải sản ","Đồ uống"
+                            };
+            }
+            @Html.DropDownList("loaisp", new SelectList(strad, strad.FirstOrDefault()), "--Select--"
+           )
+        </td>
+    </tr>
+    <tr>
+        <td>@Html.Label("Số lượng")</td>
+        <td> @Html.TextBox("sl")</td>
+    </tr>
+    <tr>
+        <td>@Html.Label("Đơn giá")</td>
+        <td> @Html.TextBox("dg")</td>
+    </tr>
+
+
+    <tr>
+        <td> <input type="submit" value="Tính" /></td>
+        <td> <input type="reset" value="Cancel" /></td>
+    </tr>
+</table>
+    }
+</div>

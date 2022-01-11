@@ -1,0 +1,39 @@
+﻿@model BachQuocDong_2018604425_De2.Models.sanpham
+
+@{
+    ViewBag.Title = "kqCau2";
+}
+
+<h2>Kết quả câu 2</h2>
+
+<div>
+    <h4>Sản phẩm</h4>
+    <hr />
+
+    <dl class="dl-horizontal">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.masp)</th>
+                    <th>@Html.DisplayFor(model => model.masp)</th>
+
+                </tr>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.tensp)</th>
+                    <th>@Html.DisplayFor(model => model.tensp)</th>
+
+                </tr>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.tien)</th>
+                    <th>@Html.DisplayFor(model => model.tien)</th>
+
+                </tr>
+            </thead>
+            
+        </table>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
