@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Bai12_Shop.Models.SanphamMua>
+@{
+    ViewBag.Title = "Datmua";
+}
+
+<h2>Danh sách đã mua</h2>
+
+@{
+
+    List<Bai12_Shop.Models.Sanpham> ds = (List<Bai12_Shop.Models.Sanpham>)Session["hanghoa"];
+}
+<table class="table-hang">
+
+    <tr style=" background-color :#00ffff">
+        <th align="center"> Mã sản phẩm</th>
+        <th>Tên sản phẩm</th>
+        <th>Hình ảnh</th>
+        <th>Số lượng</th>
+        <th> Giá tiền</th>
+        <th>Thành tiền</th>
+
+    </tr>
+    @{
+        var tongsl = 0;
+        var thanhtien = 0;
+        var tongtien = 0;
+    }
+    @foreach (var item in Model)
+    {
+        Bai12_Shop.Models.Sanpham s = new Bai12_Shop.Models.Sanpham(item.masp);
+        int vitri = ds.IndexOf(s);
+        s = ds[vitri];
+        tongsl += @item.soluong;
+        thanhtien = item.soluong * s.giatien;
+        tongtien += thanhtien;
+        <tr>
+            <td align="center"> @s.masp</td>
+            <td>@s.tensp</td>
+            <td>
+                <img src="~/Content/Hinhanh/@s.hinhanh" width="90" />
+            </td>
+            <td>@item.soluong</td>
+            <td align="center"> @s.giatien</td>
+            <td>
+                @thanhtien
+            </td>
+        </tr>
+    }
+</table>
+<br />
+<br />
+<b>Số lượng sản phẩm mua là : @tongsl </b>
+<br />
+<br />
+<b>Tổng tiền là : @tongtien </b>
+<br />
+<br />
+@Html.ActionLink("Mua tiếp đơn", "Index", "Muaban")

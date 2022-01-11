@@ -1,0 +1,21 @@
+﻿ @{
+    ViewBag.Title = "Home Page";
+}
+
+<div>
+
+
+    <h2>Home page</h2>
+    @if(Session ["user"] == null)
+            {
+                <p> @Html.ActionLink("Login please","Index","LoginDemo")</p>
+            }
+            else
+            {
+                <br />
+                <h3> Welcome @Session["user"]</h3>
+                @Html.Label("Today is") <text> </text> @DateTime.Now.DayOfWeek
+        <br />
+        @Html.ActionLink("Logout","Logout","LoginDemo")
+    }
+</div>

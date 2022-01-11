@@ -1,0 +1,12 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Session Demo</h2>
+
+Session ID: @Session.SessionID <br/> <br />
+
+Count: @Session["count"]
+
+@Html.ActionLink("Refress","Index","SessionDemo")

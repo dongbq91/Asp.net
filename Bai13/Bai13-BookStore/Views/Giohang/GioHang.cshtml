@@ -1,0 +1,34 @@
+﻿@using Bai13_BookStore.Models
+@{
+    ViewBag.Title = "GioHang";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<h2 style="text-align:center">THÔNG TIN GIỎ HÀNG</h2>
+<table align="center" border="0" cellpadding="0" cellspacing="0">
+    <tr style="text-align:center; font-weight: bold">
+        <td>Mã sách</td>
+        <td>Tên sách</td>
+        <td>Ảnh bìa</td>
+        <td>Số lượng</td>
+        <td>Đơn giá</td>
+        <td>Thành tiền</td>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr style="text-align:center; font-weight: bold">
+            <td>@item.iMasach</td>
+            <td>@item.sTensach</td>
+            <td><img src="~/wwwroot/images/@item.sAnhbia" /></td>
+            <td>@item.iSoluong</td>
+            <td>@String.Format("0:0:0", item.dDonggia)</td>
+            <td>@String.Format("0:0:0", item.dThanhTien)</td>
+        </tr>
+    }
+    <tr style="text-align:right; font-weight: bold; color:red">
+        <td colspan="3">Số lượng sách: @ViewBag.Tongsoluong</td>
+        <td colspan="3">Tổng tiền: @String.Format("{0:0:0}", ViewBag.TongTien) VNĐ</td>
+    </tr>
+</table>
