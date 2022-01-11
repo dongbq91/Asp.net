@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<style>
+    table, td, th {
+        border: 1px solid #ddd;
+        text-align: left;
+    }
+
+    table {
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 15px;
+    }
+</style>
+<h2>Index</h2>
+@Html.ActionLink("Thêm mới", "Create", "Nhanvien")
+
+
+@using (Html.BeginForm())
+{
+    <p>
+        Tim nhan vien : @Html.TextBox("seachnv")
+        <input type="submit" value="Tim" />
+    </p>
+
+}
+<table border="1px">
+    <tr>
+        <td>Mã  </td>
+        <td>@Html.ActionLink("Ten", "Index", new { sortnv = ViewBag.Sapnv, currentFilter = ViewBag.CurrentFilter })  </td>
+        <td>Phòng  </td>
+        <td>Lương  </td>
+        <td>Chức năng</td>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Manv</td>
+            <td>@item.Hoten</td>
+            <td>@item.Phong</td>
+            <td>@item.Luong</td>
+            <td>
+                @Html.ActionLink("Sủa", "Edit", new { id = item.Manv.Trim() }) |
+                @Html.ActionLink("Chi tiết", "Details", new { id = item.Manv.Trim() }) |
+                @Html.ActionLink("Xóa", "Delete", new { id = item.Manv.Trim() })
+            </td>
+        </tr>
+    }
+</table>

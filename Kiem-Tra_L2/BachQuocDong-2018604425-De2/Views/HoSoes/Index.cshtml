@@ -1,0 +1,61 @@
+﻿@model IEnumerable<BachQuocDong_2018604425_De2.Models.HoSo>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Tạo mới", "Create")
+</p>
+@using (Html.BeginForm())
+{
+    <label>Nhập Bậc lương từ </label>
+    <input type="number" id="num1" name="num1" />
+    <label> Đến </label>
+    <input type="number" id="num2" name="num2" />
+    <input type="submit" value="Tìm" />
+}
+<table class="table">
+    <tr>
+        <th>
+            Họ tên
+        </th>
+
+        <th>
+            Đơn vị
+        </th>
+
+        <th>
+            Bậc Lương
+        </th>
+
+        <th</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hoten)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Donvi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Bacluong)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Mahs }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Mahs }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Mahs })
+            </td>
+        </tr>
+    }
+
+</table>
+<tr>
+    <td colspan="2" align="center">@ViewBag.t</td>
+    <td>@ViewBag.tong</td>
+</tr>

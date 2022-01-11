@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <p>
+            Mã :
+            @Html.TextBox("Manv")<font color="red"> @ViewData["LoiID"]</font>
+        </p>
+        <p>
+            Họ tên :
+            @Html.TextBox("Hoten")<font color="red"> @ViewData["LoiHoten"]</font>
+        </p>
+        <p>
+            Phòng :
+            @Html.TextBox("Phong")<font color="red"> @ViewData["LoiPhong"]</font>
+        </p>
+        <p>
+            Lương :
+            @Html.TextBox("Luong")<font color="red">@ViewData["LoiLuong"]</font>
+        </p>
+        <p> <input type="submit" value="Save" /></p>
+    </fieldset>
+}
+
+<div>@Html.ActionLink("Tro ve", "Index")</div>

@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+
+        <p>
+            Mã : @Model.Manv
+        </p>
+        <p>
+            Họ tên : @Model.Hoten
+
+        </p>
+        <p>
+            Phòng : @Model.Phong
+
+        </p>
+        <p>
+            Lương : @Model.Luong
+        </p>
+        <p>
+            <input type="submit" value="Delete">
+            @Html.ActionLink("Tro ve", "Index")
+        </p>
+    </fieldset>
+
+}
+<div class="alert alert-primary" role="alert">
+    @ViewData["Loi xoa"]
+</div>

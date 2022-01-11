@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+<style>
+    td {
+        padding: 10px;
+    }
+</style>
+<h2>Index</h2>
+
+<form action="~/Cau5/Create" method="post">
+    <table border="1" style="border-width:2px">
+        <tr>
+            <td colspan="2" align="center">
+                <h2>QUẢN LÝ</h2>
+            </td>
+        </tr>
+        <tr>
+            <td>Mã nhân viên</td>
+            <td>
+                <input type="text" name="manv" required />
+                <label style="color:red">@ViewBag.msg</label>
+            </td>
+        </tr>
+        <tr>
+            <td>Họ tên</td>
+            <td>
+                <input type="text" name="hoten" required />
+            </td>
+        </tr>
+        <tr>
+            <td>Tên phòng</td>
+            <td>
+                <input type="text" name="phong" required />
+            </td>
+        </tr>
+        <tr>
+            <td>Lương</td>
+            <td>
+                <input type="number" name="luong" required />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <input type="submit" value="Thêm" />
+            </td>
+        </tr>
+    </table>
+</form>
