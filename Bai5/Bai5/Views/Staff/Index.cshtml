@@ -1,0 +1,32 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Staff Infomation</title>
+</head>
+<body>
+    <div>
+        <form method="post" name="f1" action="/staff/save" enctype="multipart/form-data">
+            <div>Staff ID :</div><input type="text" name="txtID" value="@ViewBag.id" />
+            <div>Staff Name :</div><input type="text" name="txtName" value="@ViewBag.name" />
+            <div>Date of Birth :</div><input type="date" name="txtDate" value="@ViewBag.birthday" />
+            <div>Salary :</div><input type="text" name="txtSalary" value="@ViewBag.salary" />
+            <div>Salary : <div>
+                <input id="fileupload" type="file" class="fileupload1" name="myfileImage"/>
+                  <b>Live priview</b><br />
+                <img src="@ViewBag.image" id="dvPriview1" />
+                  </div>
+            </div>
+            <hr />
+            <input type="submit" value="Save"  />
+            <input type="button" value="Open" onclick="location.href = '@Url.Action("Open","Staff")'"/>
+        </form>
+    </div>
+</body>
+</html>

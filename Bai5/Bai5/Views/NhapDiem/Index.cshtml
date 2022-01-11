@@ -1,0 +1,27 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        <form>
+            <div>Mã sinh viên :</div><input name="id" />
+            <div> Họ tên : </div><input name="Name" />
+            <div> Điểm :</div><input name="Diem" />
+            <hr />
+            <input type="submit" value="Lưu" formaction="/NhapDiem/Save" />
+            <input type="submit" value="Open" formaction="/NhapDiem/Open" />
+        </form>
+    </div>
+    <p> @ViewBag.HangDong</p>
+    <p>@ViewBag.ThongTin</p>
+</body>
+</html>
