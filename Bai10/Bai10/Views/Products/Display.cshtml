@@ -1,0 +1,95 @@
+﻿
+@model PagedList.IPagedList<Bai10.Models.Product>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+@{
+    ViewBag.Title = "Display";
+}
+
+<h2>Display</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Ten San pham
+        </th>
+        <th>
+            Ten San pham
+        </th>
+        <th>
+            Mo ta
+        </th>
+        <th>
+
+        </th>
+        <th>
+            Giá
+        </th>
+        <th>
+            Số lượng
+        </th>
+        <th>
+            Loại
+        </th>
+        <th>
+            Ảnh
+        </th>
+        <th>
+            Xuất xứ
+        </th>
+
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Catalogy.CatalogyName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PurchasePrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Vintage)
+            </td>
+            <td>
+                @{
+                    string ImagePath = "~/wwwroot/Images/" + item.Image;
+                }
+                <img src="@Url.Content(ImagePath) " width="100" class="img-thumbnail" />
+                <br />
+                @Html.DisplayFor(modelItem => item.Image)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Region)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ProductID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ProductID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ProductID })
+            </td>
+        </tr>
+    }
+
+</table>
+<br />
+Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount
+@Html.PagedListPager(Model, page => Url.Action("Display", new { page }))
